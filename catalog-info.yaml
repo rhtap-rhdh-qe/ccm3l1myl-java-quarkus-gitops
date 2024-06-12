@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ccm3l1myl-java-quarkus-gitops
+  description: This is GitOps manifest for ccm3l1myl-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: ccm3l1myl-java-quarkus
+    janus-idp.io/tekton: ccm3l1myl-java-quarkus 
+    backstage.io/kubernetes-id: ccm3l1myl-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ccm3l1myl-java-quarkus
